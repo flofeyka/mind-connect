@@ -1,0 +1,27 @@
+body {
+  background-color: #222;
+  color: white;
+  height: 100%;
+}
+
+* {
+  border-radius: 10px;
+}
+
+button {
+  min-width: 80px;
+  max-width: 150px;
+  min-height: 30px;
+  max-height: 100px;
+  background-color: #333;
+  color: white;
+  border: 1px white solid;
+}
+
+input {
+  background-color: #333;
+  color: white;
+  border: none;
+  margin-bottom: 5px;
+  border: 1px white solid;
+}
