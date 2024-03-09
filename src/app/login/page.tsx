@@ -1,14 +1,12 @@
 'use client'
 
-import { useAppDispatch, useAppSelector } from "@/lib/hooks"
+import { useAppSelector } from "@/lib/hooks"
 import { useFormik } from "formik";
 import styles from "./login.module.css";
-import { setCaptchaUrl } from "@/lib/auth/authSlice";
 import * as Yup from "yup";
 
 export default function Auth() {
     const captchaUrl = useAppSelector(state => state.auth.captchaUrl);
-    const dispatch = useAppDispatch();
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -26,16 +24,27 @@ export default function Auth() {
     })
 
     return <form onSubmit={formik.handleSubmit} className={styles.loginBlock}>
-        <input className={styles.loginInput} name="email" value={formik.values.email} onChange={formik.handleChange}
-            placeholder="E-mail" />
-        <input className={styles.loginInput} name="password" value={formik.values.password} onChange={formik.handleChange} 
-            placeholder="Password" />
-        {captchaUrl !== null && <div>
-            <input className={styles.captchaInput} name="captcha" value={formik.values.captcha} onChange={formik.handleChange}
-            placeholder="captcha"/>
-        </div>}
-        <div>
-            <button type="submit">Log in</button>
+        <div className={styles.loginContainer}>
+            <div className={styles.signInText}>
+                Sign in
+            </div>
+            <div>
+                <input className={styles.loginInput} name="email" value={formik.values.email} onChange={formik.handleChange}
+                    placeholder="E-mail" type="email" />
+            </div>
+            <div>
+                <input className={styles.loginInput} name="password" value={formik.values.password} onChange={formik.handleChange}
+                    placeholder="Password" type="password" />
+            </div>
+
+            {captchaUrl !== null && <div>
+                <input className={styles.captchaInput} name="captcha" value={formik.values.captcha} onChange={formik.handleChange}
+                    placeholder="captcha" />
+            </div>}
+
+            <div>
+                <button type="submit" className={styles.loginButton}>Log in</button>
+            </div>
         </div>
     </form>
 }
