@@ -13,9 +13,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'footer-texture': "url('/assets/footer-texture.png')",
-      }
     },
   },
   darkMode: "class",
