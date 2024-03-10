@@ -12,7 +12,11 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'footer-texture': "url('/assets/footer-texture.png')",
+      }
+    },
   },
   darkMode: "class",
   plugins: [nextui()],

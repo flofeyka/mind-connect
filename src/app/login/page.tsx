@@ -2,8 +2,8 @@
 
 import { useAppSelector } from "@/lib/hooks"
 import { useFormik } from "formik";
-import styles from "./login.module.css";
 import * as Yup from "yup";
+import { Input } from "@nextui-org/react";
 
 export default function Auth() {
     const captchaUrl = useAppSelector(state => state.auth.captchaUrl);
@@ -23,27 +23,24 @@ export default function Auth() {
         }
     })
 
-    return <form onSubmit={formik.handleSubmit} className={styles.loginBlock}>
-        <div className={styles.loginContainer}>
-            <div className={styles.signInText}>
+    return <form onSubmit={formik.handleSubmit}>
+        <div>
+            <div>
                 Sign in
             </div>
             <div>
-                <input className={styles.loginInput} name="email" value={formik.values.email} onChange={formik.handleChange}
-                    placeholder="E-mail" type="email" />
+                <Input isRequired label="Email"/>
             </div>
             <div>
-                <input className={styles.loginInput} name="password" value={formik.values.password} onChange={formik.handleChange}
-                    placeholder="Password" type="password" />
+                <Input isRequired label="Password"/>
             </div>
 
             {captchaUrl !== null && <div>
-                <input className={styles.captchaInput} name="captcha" value={formik.values.captcha} onChange={formik.handleChange}
-                    placeholder="captcha" />
+                <Input/>
             </div>}
 
             <div>
-                <button type="submit" className={styles.loginButton}>Log in</button>
+                <button type="submit">Log in</button>
             </div>
         </div>
     </form>

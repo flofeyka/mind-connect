@@ -25,27 +25,33 @@ export default function Register() {
         }
     })
     return <form onSubmit={formik.handleSubmit}>
-        <div>Sign up</div>
         <div>
-            <input name="email" value={formik.values.email} onChange={formik.handleChange} placeholder="E-mail" type="email" />
-        </div>
-        <div>
-            <input name="userName" value={formik.values.userName} onChange={formik.handleChange} placeholder="User name" type="text"/>
-        </div>
-        <div>
-            <input name="password" value={formik.values.password} onChange={formik.handleChange} placeholder="Password" type="password" />
-        </div>
-        <div>
-            <input name="repeatPassword" value={formik.values.repeatPassword} onChange={formik.handleChange} placeholder="Repeat password" type="password" />
-        </div>
-        <div>
-            {captchaUrl != null && <div>
-                <label>Captcha</label>
-                <input/>
-            </div>}
-        </div>
-        <div>
-            <button type="submit">Sign up</button>
+            <div>Sign up</div>
+            <div>
+                <input name="email" value={formik.values.email} 
+                    onChange={formik.handleChange} placeholder="E-mail" type="email" />
+            </div>
+            <div>
+                <input name="userName" value={formik.values.userName} 
+                    onChange={formik.handleChange} placeholder="Username" type="text" />
+            </div>
+            <div>
+                <input name="password" value={formik.values.password} 
+                    onChange={formik.handleChange} placeholder="Password" type="password" />
+            </div>
+            <div>
+                <input name="repeatPassword" value={formik.values.repeatPassword}
+                    onChange={formik.handleChange} placeholder="Repeat password" type="password" />
+            </div>
+            <div>
+                {captchaUrl != null && <div>
+                    <label>Captcha</label>
+                    <input />
+                </div>}
+            </div>
+            <div>
+                <button type="submit">Sign up</button>
+            </div>
         </div>
     </form>
 }

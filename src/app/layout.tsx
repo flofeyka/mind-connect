@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import { Provider } from "react-redux";
-import { makeStore } from "@/lib/store";
 import Providers from "./providers";
+import Footer from "./Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          {children}
+          <div className="h-14">Header</div>
+          <div className="h-screen">
+            {children}
+          </div>
+          <Footer/>
         </Providers>
       </body>
     </html>

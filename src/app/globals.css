@@ -1,40 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-<<<<<<< HEAD
-=======
+
 body {
   background-color: #222;
   color: white;
   height: 100%;
-}
->>>>>>> bb01d3ab3cf8a41fed34ff6967c929dbdb1ae5c4
-
-body {
-  background-color: #333;
-  color: white;
-  height: 100vh;
-}
-
-button {
-  min-width: 80px;
-  max-width: 400px;
-  min-height: 30px;
-  max-height: 150px;
-  background-color: #333;
-  color: white;
-  border: 1px white solid;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-input {
-  background-color: #333;
-  color: white;
-  border: none;
-  margin-bottom: 10px;
-  border: 1px white solid;
-  border-radius: 5px;
-
+  width: 100%;
 }
