@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< HEAD
+=======
+body {
+  background-color: #222;
+  color: white;
+  height: 100%;
+}
+>>>>>>> bb01d3ab3cf8a41fed34ff6967c929dbdb1ae5c4
 
 body {
   background-color: #333;
